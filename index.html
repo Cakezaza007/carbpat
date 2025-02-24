@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Profile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>ระบุเป้าหมายของคุณ</h2>
+    <form action="target-weight.html">
+      <label><input type="radio" name="goal" value="maintain"> ฉันต้องการรักษาน้ำหนักเท่าเดิม</label><br>
+      <label><input type="radio" name="goal" value="gain"> ฉันต้องการเพิ่มน้ำหนัก</label><br>
+      <label><input type="radio" name="goal" value="lose"> ฉันต้องการลดน้ำหนัก</label><br>
+      <label><input type="radio" name="goal" value="muscle"> ฉันต้องการเพิ่มกล้ามเนื้อ</label><br>
+      <button type="submit">ถัดไป</button>
+    </form>
+  </div>  <div class="container" id="target-weight">
+    <h2>ตั้งน้ำหนักเป้าหมาย</h2>
+    <form action="goal-summary.html">
+      <label for="target-weight">น้ำหนักเป้าหมาย (กก.):</label>
+      <input type="number" id="target-weight" name="target-weight" required><br>
+      <button type="submit">ถัดไป</button>
+    </form>
+  </div>  <div class="container" id="goal-summary">
+    <h2>นี่คือเป้าหมายของคุณ</h2>
+    <p>น้ำหนักเป้าหมายของคุณคือ <span id="display-weight">--</span> กก.</p>
+    <p>คาร์โบไฮเดรตที่เหมาะสมต่อวัน: <span id="carbs">--</span> กรัม</p>
+    <p>แคลอรี่ที่เหมาะสมต่อวัน: <span id="calories">--</span> kcal</p>
+    <button onclick="goBack()">ย้อนกลับ</button>
+  </div>  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script></body>
+</html>
